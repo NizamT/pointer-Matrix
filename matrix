@@ -1,0 +1,55 @@
+#include <stdio.h>
+
+
+int main()
+{
+    int matrix[5][5], sum = 0;
+    int i, j, ROWS, COLS;
+    
+    printf("Enter the number of rows :");
+    scanf("%d", &ROWS);
+    printf("Enter the number of columns : ");
+    scanf("%d", &COLS);
+    
+    printf("Enter elements in %dx%d matrix.\n\t---------------------------\n", ROWS, COLS);
+for(i = 0; i < ROWS; i++)
+    {
+        for(j = 0; j < COLS; j++)
+        {
+        	printf("\tEnter an element in intex %dx%d : ", i, j);
+            scanf("%d", (*(matrix + i) + j));
+        }
+    }
+    
+    printf("\n\t-----------------------/nElements of %dx%d matrix.\n\n", ROWS, COLS);
+    for (i = 0; i < ROWS; i++)
+    {
+        for (j = 0; j < COLS; j++)
+        {
+        	if(j == 0)
+        	printf("\t\t");
+            printf("%d ", *(*(matrix + i) + j));
+        }
+
+        printf("\n");
+    }
+
+	for (i = 0; i < ROWS; i++)
+    {
+        for (j = 0; j < COLS; j++)
+        {
+        if(i == j)
+        {
+        sum = sum + *(*(matrix + i) + j);	
+		}
+        }
+    }
+    
+	printf("\n\t-------------------------\n\t sum of all digonal elements in %dx%d matrix is %d.", i, j, sum);
+	
+    return 0;
+}
+
+
+
+
